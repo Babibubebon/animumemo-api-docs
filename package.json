@@ -1,0 +1,24 @@
+{
+  "name": "animumemo-docs",
+  "version": "1.0.0",
+  "description": "https://animumemo.com/",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-aglio": "^0.0.10",
+    "gulp-less": "^3.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Babibubebon/animumemo-docs.git"
+  },
+  "author": "Babibubebon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Babibubebon/animumemo-docs/issues"
+  },
+  "homepage": "https://github.com/Babibubebon/animumemo-docs#readme"
+}

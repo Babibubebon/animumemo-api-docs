@@ -1,0 +1,444 @@
+FORMAT: 1A
+HOST: https://api.animumemo.com/madb
+
+# Animumemo MADB API
+メディア芸術データベースにて提供されているアニメ作品のデータをAPIとして提供します。
+
+
+# Group Anime
+
+## アニメシリーズ情報 [/anime/series]
+「作品情報（シリーズ）」のデータを取得します。
+
+### シリーズ情報の1件取得 [GET /anime/series/{id}]
+
++ Parameters
+    + id: `ANS000550400` - 以下のいずれかのIDを指定します。
+        + アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID
+        + URL ID: 作品情報ページURLの末尾の数字 `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
+
++ Response 200 (application/json)
+    
+    + Body
+        <!-- include(json/series.json) -->
+            
+    + Schema
+        {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "type": "object",
+            "properties": {
+                "url_id": {
+                "type": "number",
+                "description": "URL ID"
+                },
+                "anime_series_id": {
+                "type": "string",
+                "description": "アニメシリーズID"
+                },
+                "media": {
+                "type": "string",
+                "description": "メディア"
+                },
+                "title": {
+                "type": "string",
+                "description": "タイトル"
+                },
+                "title_kana": {
+                "type": "string",
+                "description": "タイトル よみがな"
+                },
+                "start_date": {
+                "type": "string",
+                "description": "開始年月日"
+                },
+                "end_date": {
+                "type": "string",
+                "description": "終了年月日"
+                },
+                "airtime": {
+                "type": "string",
+                "description": "放送枠時間／収録時間"
+                },
+                "broadcasting_times": {
+                "type": "string",
+                "description": "放送回数"
+                },
+                "number_episodes": {
+                "type": "string",
+                "description": "話数"
+                },
+                "network": {
+                "type": "string",
+                "description": "放送局／劇場／販売元"
+                },
+                "term": {
+                "type": "string",
+                "description": "放送期間など"
+                },
+                "productions": {
+                "type": "string",
+                "description": "製作・制作"
+                },
+                "productions_authority_id": {
+                "type": "string",
+                "description": "製作・制作典拠ID"
+                },
+                "original": {
+                "type": "string",
+                "description": "原作"
+                },
+                "director": {
+                "type": "string",
+                "description": "監督"
+                },
+                "staffs": {
+                "type": "string",
+                "description": "メインスタッフ"
+                },
+                "staffs_authority_id": {
+                "type": "string",
+                "description": "スタッフ典拠ID"
+                },
+                "casts": {
+                "type": "string",
+                "description": "キャスト"
+                },
+                "musics": {
+                "type": "string",
+                "description": "主題歌情報"
+                },
+                "episode_title": {
+                "type": "string",
+                "description": "各話タイトル"
+                },
+                "description": {
+                "type": "string",
+                "description": "解説"
+                },
+                "story": {
+                "type": "string",
+                "description": "ストーリー"
+                },
+                "main_character": {
+                "type": "string",
+                "description": "メインキャラクター紹介"
+                },
+                "character_design": {
+                "type": "string",
+                "description": "キャラクターデザイン関連"
+                },
+                "main_mecha": {
+                "type": "string",
+                "description": "キャラクター紹介（メインメカ）"
+                },
+                "sound": {
+                "type": "string",
+                "description": "音響関連"
+                },
+                "original_media": {
+                "type": "string",
+                "description": "原作のメディア"
+                },
+                "eirin_no": {
+                "type": "string",
+                "description": "映倫NO"
+                },
+                "eirin_rating": {
+                "type": "string",
+                "description": "(映倫NOと対になっている)レーティング"
+                },
+                "copyright": {
+                "type": "string",
+                "description": "コピーライト"
+                },
+                "title_japanese_english": {
+                "type": "string",
+                "description": "英語表記（国内）"
+                },
+                "title_english": {
+                "type": "string",
+                "description": "英語表記（海外）"
+                },
+                "title_romaji_hepburn": {
+                "type": "string",
+                "description": "タイトル英語表記 ローマ字（ヘボン式）"
+                },
+                "title_romaji_macron": {
+                "type": "string",
+                "description": "タイトル英語表記 ローマ字（マクロン表記）"
+                },
+                "title_alias": {
+                "type": "string",
+                "description": "通称"
+                },
+                "related_works": {
+                "type": "string",
+                "description": "関連作品"
+                },
+                "tag": {
+                "type": "string",
+                "description": "タグ"
+                },
+                "notes": {
+                "type": "string",
+                "description": "アニメシリーズ備考"
+                },
+                "master_media": {
+                "type": "string",
+                "description": "原版メディア"
+                },
+                "sources": {
+                "type": "string",
+                "description": "情報源"
+                },
+                "url": {
+                "type": "string",
+                "description": "メディア芸術データベースの該当ページのURL"
+                }
+            }
+        }
+
+### シリーズ情報の全件取得 [GET /anime/series{?fields,limit,offset}]
+
++ Parameters
+    + fields: `anime_series_id,title,media` (string, optional) - 取得するフィールド。複数の場合は`,`区切りで指定。省略時は全て取得。
+    + limit: `5` (number, optional) - 最大取得件数
+        + Default: `500`
+    + offset: `0` (number, optional) - 取得開始位置
+        + Default: `0`
+
++ Response 200 (application/json)
+
+    + Body
+        {
+            "total_count": 5,
+            "offset": 7500,
+            "limit": 5,
+            "result":[
+                {
+                    "anime_series_id": "ANS001258400",
+                    "title": "アラタカンガタリ～革神語～ ピクチャードラマ",
+                    "media": "OVA"
+                },
+                {
+                    "anime_series_id": "ANS001259000",
+                    "title": "ゆゆ式 特典映像 にゃにゃ式 予告編　・予告編/「猫ににゃりました」",
+                    "media": "OVA"
+                },
+                {
+                    "anime_series_id": "ANS001259100",
+                    "title": "ゆゆ式 特典映像 にゃにゃ式",
+                    "media": "OVA"
+                },
+                {
+                    "anime_series_id": "ANS001259600",
+                    "title": "俺の妹がこんなに可愛いわけがない。 ショートムービー",
+                    "media": "OVA"
+                },
+                {
+                    "anime_series_id": "ANS002000100",
+                    "title": "花咲爺",
+                    "media": "劇場"
+                }
+            ]
+        }
+
+    + Schema
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "type": "object",
+          "properties": {
+            "total_count": {
+              "type": "number",
+              "description": "取得件数"
+            },
+            "offset": {
+              "type": "number",
+              "description": "取得開始位置"
+            },
+            "limit": {
+              "type": "number",
+              "description": "最大取得件数"
+            },
+            "result": {
+              "type": "array",
+              "description": "取得結果の`AnimeSeries`の配列"
+            }
+          }
+        }
+
+### アニメ各話情報の取得 [GET /anime/series/{id}/episodes]
+
++ Parameters
+    + id: `ANS000550400` - 以下のいずれかのIDを指定します。
+        + アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID
+        + URL ID: 作品情報ページURLの末尾の数字 `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
+
++ Response 200
+    + Body
+        <!-- include(json/episodes.json) -->
+
+
+## アニメ情報の検索 [/anime/search]
+
+### 検索を実行 [GET /anime/search{?fields,limit,offset,media,title,start_date,end_date,airtime}]
+以下に示したパラメータ以外にも`AnimeSeries`が持つフィールドに対して検索文字列を指定することができる。
+
++ Parameters
+    + fields (string, optional) - 取得するフィールド
+    複数の場合は`,`区切りで指定。省略時は全て取得。
+    + limit (number, optional) - 最大取得件数
+        + Default: `500`
+    + offset (number, optional) - 取得開始位置
+        + Default: `0`
+    + media (enum[string], optional) - メディア
+        複数の場合は`,`区切りで指定。
+        + Members
+            + `TV`
+            + `TVスペシャル`
+            + `OVA`
+            + `劇場`
+            + `イベント`
+            + `個人制作`
+            + `その他`
+            + `不明`
+    + title (string, optional) - 作品タイトルの検索文字列
+    + start_date (string, optional) - 放送開始年月日
+        - 範囲検索: `YYYYMMDD-YYYYMMDD`, `YYYYMMDD-`, `-YYYYMMDD`
+        - イコール検索: `YYYYMMDD`
+    + end_date (string, optional) - 放送終了年月日
+        フォーマットは`start_date`に同じ
+    + airtime (string, optional) - 放送時間（分）
+        - 範囲検索: `min-min`, `min-`, `-min`
+        - イコール検索: `min`
+
++ Request
+    ```http
+    GET
+    /anime/search?fields=title,media,start_date&title=魔法少女&media=TV&start_date=20000101-20051231
+    ```
+
++ Response 200 (application/json)
+    
+    + Body
+        {
+            "total_count": 5,
+            "offset": 0,
+            "limit": 500,
+            "result":[
+                {
+                    "title": "魔法少女隊アルス",
+                    "media": "TV",
+                    "start_date": "2004/04/09"
+                },
+                {
+                    "title": "魔法少女猫 たると",
+                    "media": "TV",
+                    "start_date": "2001/07/05"
+                },
+                {
+                    "title": "魔法少女リリカルなのは",
+                    "media": "TV",
+                    "start_date": "2004/10/02"
+                },
+                {
+                    "title": "魔法少女リリカルなのはA's",
+                    "media": "TV",
+                    "start_date": "2005/10/02"
+                },
+                {
+                    "title": "奥さまは 魔法少女 Bewitched Arnès",
+                    "media": "TV",
+                    "start_date": "2005/07/09"
+                }
+            ]
+        }
+
+    + Schema
+        {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+            "total_count": {
+            "type": "number",
+            "description": "取得件数"
+            },
+            "offset": {
+            "type": "number",
+            "description": "取得開始位置"
+            },
+            "limit": {
+            "type": "number",
+            "description": "最大取得件数"
+            },
+            "result": {
+            "type": "array",
+            "description": "取得結果の`AnimeSeries`の配列"
+            }
+        }
+        }
+
+
+# Data Structures
+
+## AnimeSeries (object)
++ url_id (number) - URL ID
++ anime_series_id (string) - アニメシリーズID
++ media (string) - メディア
++ title (string) - タイトル
++ title_kana (string) - タイトル よみがな
++ start_date (string) - 開始年月日
++ end_date (string) - 終了年月日
++ airtime (string) - 放送枠時間／収録時間
++ broadcasting_times (string) - 放送回数
++ number_episodes (string) - 話数
++ network (string) - 放送局／劇場／販売元
++ term (string) - 放送期間など
++ productions (string) - 製作・制作
++ productions_authority_id (string) - 製作・制作典拠ID
++ original (string) - 原作
++ director (string) - 監督
++ staffs (string) - メインスタッフ
++ staffs_authority_id (string) - スタッフ典拠ID
++ casts (string) - キャスト
++ musics (string) - 主題歌情報
++ episode_title (string) - 各話タイトル
++ description (string) - 解説
++ story (string) - ストーリー
++ main_character (string) - メインキャラクター紹介
++ character_design (string) - キャラクターデザイン関連
++ main_mecha (string) - キャラクター紹介（メインメカ）
++ sound (string) - 音響関連
++ original_media (string) - 原作のメディア
++ eirin_no (string) - 映倫NO
++ eirin_rating (string) - (映倫NOと対になっている)レーティング
++ copyright (string) - コピーライト
++ title_japanese_english (string) - 英語表記（国内）
++ title_english (string) - 英語表記（海外）
++ title_romaji_hepburn (string) - タイトル英語表記 ローマ字（ヘボン式）
++ title_romaji_macron (string) - タイトル英語表記 ローマ字（マクロン表記）
++ title_alias (string) - 通称
++ related_works (string) - 関連作品
++ tag (string) - タグ
++ notes (string) - アニメシリーズ備考
++ master_media (string) - 原版メディア
++ sources (string) - 情報源
++ url (string) - メディア芸術データベースの該当ページのURL
+
+## AnimeSeriesList (object)
++ total_count (number) - 取得件数 
++ offset (number) - 取得開始位置
++ limit (number) - 最大取得件数
++ result (array[AnimeSeries]) - 取得結果の`AnimeSeries`の配列
+
+## AnimeEpisode (object)
++ episode - 各話表記
++ title - 各話タイトル
++ staffs - 各話スタッフ
++ casts - 各話キャスト
++ characters - 各話キャラクター
++ story - 各話ストーリー
++ main_mecha - 各話メインメカ
++ notes - 各話情報備考
++ sources - 情報源
+

@@ -1,0 +1,752 @@
+<div class="aglio-body"><div class="container-fluid"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#anime">Anime</a></div><div class="collapse-content"><ul><li><a href="#anime-アニメシリーズ情報">アニメシリーズ情報</a><ul><li><a href="#anime-アニメシリーズ情報-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>シリーズ情報の1件取得</a></li><li><a href="#anime-アニメシリーズ情報-get-1"><span class="badge get"><i class="fa fa-arrow-down"></i></span>シリーズ情報の全件取得</a></li><li><a href="#anime-アニメシリーズ情報-get-2"><span class="badge get"><i class="fa fa-arrow-down"></i></span>アニメ各話情報の取得</a></li></ul></li><li><a href="#anime-アニメ情報の検索-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>検索を実行</a></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://api.animumemo.com/madb">https://api.animumemo.com/madb</a></p></nav><div class="content"><header><h1 id="top">Animumemo MADB API</h1></header><p>メディア芸術データベースにて提供されているアニメ作品のデータをAPIとして提供します。</p>
+<section id="anime" class="resource-group"><h2 class="group-heading">Anime <a href="#anime" class="permalink">&para;</a></h2><div id="anime-アニメシリーズ情報" class="resource"><h3 class="resource-heading">アニメシリーズ情報 <a href="#anime-アニメシリーズ情報" class="permalink">&nbsp;&para;</a></h3><p>「作品情報（シリーズ）」のデータを取得します。</p>
+<div id="anime-アニメシリーズ情報-get" class="action get"><h4 class="action-heading"><div class="name">シリーズ情報の1件取得</div><a href="#anime-アニメシリーズ情報-get" class="method get">GET</a><code class="uri">/anime/series/{id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.animumemo.com/madb</span>/anime/series/<span class="hljs-attribute" title="id">ANS000550400</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>ANS000550400</span></span><p>以下のいずれかのIDを指定します。</p>
+<ul>
+<li>
+<p>アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID</p>
+</li>
+<li>
+<p>URL ID: 作品情報ページURLの末尾の数字 <code>https://mediaarts-db.jp/an/anime_series/([0-9]+)</code></p>
+</li>
+</ul>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+  "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"TV"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"ARIA The ANIMATION"</span></span>,
+  "<span class="hljs-attribute">title_kana</span>": <span class="hljs-value"><span class="hljs-string">"アリアザアニメーション"</span></span>,
+  "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2005/10/06"</span></span>,
+  "<span class="hljs-attribute">end_date</span>": <span class="hljs-value"><span class="hljs-string">"2005/12/29"</span></span>,
+  "<span class="hljs-attribute">airtime</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">broadcasting_times</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">number_episodes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">term</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">productions</span>": <span class="hljs-value"><span class="hljs-string">"[制作]ハルフィルムメーカー　／　[製作]ARIAカンパニー"</span></span>,
+  "<span class="hljs-attribute">productions_authority_id</span>": <span class="hljs-value"><span class="hljs-string">"A400002613　／　A400000450　／　A400003981"</span></span>,
+  "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">director</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">"[原作]天野こずえ　／　[シリーズ構成]佐藤順一　／　[監督]佐藤順一　／　[キャラクターデザイン]古賀誠　／　[美術]西川淳一郎　／　[音楽]Choro Club feat. Senoo"</span></span>,
+  "<span class="hljs-attribute">staffs_authority_id</span>": <span class="hljs-value"><span class="hljs-string">"A300000326　／　A300003335　／　A300022947　／　A300018563　／　A300012839　／　A300003020　／　A300010875"</span></span>,
+  "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">"【水無灯里】葉月絵理乃　／　【藍華】斎藤千和　／　【アリス】広 橋 涼　／　【アリシア】大原さやか　／　【アイ】水橋かおり　／　【アリア社長】西村ちなみ　／　【暁】野島裕史　／　【晃】皆川純子"</span></span>,
+  "<span class="hljs-attribute">musics</span>": <span class="hljs-value"><span class="hljs-string">"OP「ウンディーネ」 歌 牧野由依　／　ED「Rainbow」 歌・演奏 ROUND TABLE feat. Nino"</span></span>,
+  "<span class="hljs-attribute">episode_title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">main_character</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">character_design</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">sound</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">original_media</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">eirin_no</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">eirin_rating</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">copyright</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">title_japanese_english</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">title_english</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">title_romaji_hepburn</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">title_romaji_macron</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">title_alias</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">related_works</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">tag</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">master_media</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">"アニメアワード投票用データ　／　年間パーフェクト・データ(AWD+APDY)"</span></span>,
+  "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"https://mediaarts-db.jp/an/anime_series/9487"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">url_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"URL ID"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"アニメシリーズID"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">media</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メディア"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"タイトル"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title_kana</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"タイトル よみがな"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">start_date</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"開始年月日"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">end_date</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"終了年月日"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">airtime</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"放送枠時間／収録時間"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">broadcasting_times</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"放送回数"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">number_episodes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"話数"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">network</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"放送局／劇場／販売元"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">term</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"放送期間など"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">productions</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"製作・制作"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">productions_authority_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"製作・制作典拠ID"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"原作"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">director</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"監督"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メインスタッフ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">staffs_authority_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"スタッフ典拠ID"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"キャスト"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">musics</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"主題歌情報"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">episode_title</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話タイトル"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"解説"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ストーリー"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">main_character</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メインキャラクター紹介"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">character_design</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"キャラクターデザイン関連"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"キャラクター紹介（メインメカ）"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">sound</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"音響関連"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">original_media</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"原作のメディア"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">eirin_no</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"映倫NO"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">eirin_rating</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"(映倫NOと対になっている)レーティング"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">copyright</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"コピーライト"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title_japanese_english</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"英語表記（国内）"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title_english</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"英語表記（海外）"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title_romaji_hepburn</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"タイトル英語表記 ローマ字（ヘボン式）"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title_romaji_macron</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"タイトル英語表記 ローマ字（マクロン表記）"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">title_alias</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"通称"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">related_works</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"関連作品"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">tag</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"タグ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"アニメシリーズ備考"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">master_media</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"原版メディア"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"情報源"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">url</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メディア芸術データベースの該当ページのURL"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="anime-アニメシリーズ情報-get-1" class="action get"><h4 class="action-heading"><div class="name">シリーズ情報の全件取得</div><a href="#anime-アニメシリーズ情報-get-1" class="method get">GET</a><code class="uri">/anime/series{?fields,limit,offset}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.animumemo.com/madb</span>/anime/series?<span class="hljs-attribute">fields=</span><span class="hljs-literal">anime_series_id,title,media</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">5</span>&<span class="hljs-attribute">offset=</span><span class="hljs-literal">0</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>fields</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>anime_series_id,title,media</span></span><p>取得するフィールド。複数の場合は<code>,</code>区切りで指定。省略時は全て取得。</p>
+</dd><dt>limit</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>500</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5</span></span><p>最大取得件数</p>
+</dd><dt>offset</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0</span></span><p>取得開始位置</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">total_count</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+  "<span class="hljs-attribute">offset</span>": <span class="hljs-value"><span class="hljs-number">7500</span></span>,
+  "<span class="hljs-attribute">limit</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+  "<span class="hljs-attribute">result</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS001258400"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"アラタカンガタリ～革神語～ ピクチャードラマ"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"OVA"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS001259000"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"ゆゆ式 特典映像 にゃにゃ式 予告編　・予告編/「猫ににゃりました」"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"OVA"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS001259100"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"ゆゆ式 特典映像 にゃにゃ式"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"OVA"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS001259600"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"俺の妹がこんなに可愛いわけがない。 ショートムービー"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"OVA"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS002000100"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"花咲爺"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"劇場"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">total_count</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得件数"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">offset</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得開始位置"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">limit</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"最大取得件数"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得結果の`AnimeSeries`の配列"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="anime-アニメシリーズ情報-get-2" class="action get"><h4 class="action-heading"><div class="name">アニメ各話情報の取得</div><a href="#anime-アニメシリーズ情報-get-2" class="method get">GET</a><code class="uri">/anime/series/{id}/episodes</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.animumemo.com/madb</span>/anime/series/<span class="hljs-attribute" title="id">ANS000550400</span>/episodes</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>ANS000550400</span></span><p>以下のいずれかのIDを指定します。</p>
+<ul>
+<li>
+<p>アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID</p>
+</li>
+<li>
+<p>URL ID: 作品情報ページURLの末尾の数字 <code>https://mediaarts-db.jp/an/anime_series/([0-9]+)</code></p>
+</li>
+</ul>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Body</h5><pre><code>[
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 素敵な奇跡を…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 特別な日に…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"3"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 透明な少女と…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"4"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 届かない手紙は…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"5"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その あるはずのない島へ…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"6"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 守りたいものに…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"7"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 素敵なお仕事を…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"8"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 憂鬱な社長ったら…　/　その イケてるヒーローってば…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"9"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その 星のような妖精は…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"10"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その ほかほかな休日は…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"11"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その オレンジの日々を…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"12"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その やわらかな願いは…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">anime_series_id</span>": <span class="hljs-value"><span class="hljs-string">"ANS000550400"</span></span>,
+    "<span class="hljs-attribute">episode</span>": <span class="hljs-value"><span class="hljs-string">"13"</span></span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"その まっしろな朝を…"</span></span>,
+    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">casts</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">characters</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">story</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">main_mecha</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">notes</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">sources</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+  </span>}
+]</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="anime-アニメ情報の検索" class="resource"><h3 class="resource-heading">アニメ情報の検索 <a href="#anime-アニメ情報の検索" class="permalink">&nbsp;&para;</a></h3><div id="anime-アニメ情報の検索-get" class="action get"><h4 class="action-heading"><div class="name">検索を実行</div><a href="#anime-アニメ情報の検索-get" class="method get">GET</a><code class="uri">/anime/search{?fields,limit,offset,media,title,start_date,end_date,airtime}</code></h4><p>以下に示したパラメータ以外にも<code>AnimeSeries</code>が持つフィールドに対して検索文字列を指定することができる。</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.animumemo.com/madb</span>/anime/search?<span class="hljs-attribute">fields=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">offset=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">media=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">title=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">start_date=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">end_date=</span><span class="hljs-literal"></span>&<span class="hljs-attribute">airtime=</span><span class="hljs-literal"></span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>fields</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>取得するフィールド
+複数の場合は<code>,</code>区切りで指定。省略時は全て取得。</p>
+</dd><dt>limit</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>500</span></span>&nbsp;<p>最大取得件数</p>
+</dd><dt>offset</dt><dd><code>number</code>&nbsp;<span>(optional)</span>&nbsp;<span class="text-info default"><strong>Default:&nbsp;</strong><span>0</span></span>&nbsp;<p>取得開始位置</p>
+</dd><dt>media</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>メディア
+複数の場合は<code>,</code>区切りで指定。</p>
+<p class="choices"><strong>Choices:&nbsp;</strong><code>TV</code> <code>TVスペシャル</code> <code>OVA</code> <code>劇場</code> <code>イベント</code> <code>個人制作</code> <code>その他</code> <code>不明</code> </p></dd><dt>title</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>作品タイトルの検索文字列</p>
+</dd><dt>start_date</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>放送開始年月日</p>
+<ul>
+<li>
+<p>範囲検索: <code>YYYYMMDD-YYYYMMDD</code>, <code>YYYYMMDD-</code>, <code>-YYYYMMDD</code></p>
+</li>
+<li>
+<p>イコール検索: <code>YYYYMMDD</code></p>
+</li>
+</ul>
+</dd><dt>end_date</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>放送終了年月日
+フォーマットは<code>start_date</code>に同じ</p>
+</dd><dt>airtime</dt><dd><code>string</code>&nbsp;<span>(optional)</span>&nbsp;<p>放送時間（分）</p>
+<ul>
+<li>
+<p>範囲検索: <code>min-min</code>, <code>min-</code>, <code>-min</code></p>
+</li>
+<li>
+<p>イコール検索: <code>min</code></p>
+</li>
+</ul>
+</dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Body</h5><pre><code>GET
+/anime/search?fields=title,media,start_date&amp;title=魔法少女&amp;media=TV&amp;start_date=20000101-20051231</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">total_count</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+  "<span class="hljs-attribute">offset</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+  "<span class="hljs-attribute">limit</span>": <span class="hljs-value"><span class="hljs-number">500</span></span>,
+  "<span class="hljs-attribute">result</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"魔法少女隊アルス"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"TV"</span></span>,
+      "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2004/04/09"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"魔法少女猫 たると"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"TV"</span></span>,
+      "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2001/07/05"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"魔法少女リリカルなのは"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"TV"</span></span>,
+      "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2004/10/02"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"魔法少女リリカルなのはA's"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"TV"</span></span>,
+      "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2005/10/02"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"奥さまは 魔法少女 Bewitched Arnès"</span></span>,
+      "<span class="hljs-attribute">media</span>": <span class="hljs-value"><span class="hljs-string">"TV"</span></span>,
+      "<span class="hljs-attribute">start_date</span>": <span class="hljs-value"><span class="hljs-string">"2005/07/09"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">total_count</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得件数"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">offset</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得開始位置"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">limit</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"最大取得件数"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得結果の`AnimeSeries`の配列"</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a></p></div><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script>
