@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+        "episode": {
+        "type": "string",
+        "description": "各話表記"
+        },
+        "title": {
+        "type": "string",
+        "description": "各話タイトル"
+        },
+        "staffs": {
+        "type": "string",
+        "description": "各話スタッフ"
+        },
+        "casts": {
+        "type": "string",
+        "description": "各話キャスト"
+        },
+        "characters": {
+        "type": "string",
+        "description": "各話キャラクター"
+        },
+        "story": {
+        "type": "string",
+        "description": "各話ストーリー"
+        },
+        "main_mecha": {
+        "type": "string",
+        "description": "各話メインメカ"
+        },
+        "notes": {
+        "type": "string",
+        "description": "各話情報備考"
+        },
+        "sources": {
+        "type": "string",
+        "description": "情報源"
+        }
+    }
+  }
+}

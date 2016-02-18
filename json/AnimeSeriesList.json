@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "AnimeSeriesList",
+    "type": "object",
+    "properties": {
+    "total_count": {
+        "type": "number",
+        "description": "取得件数"
+    },
+    "offset": {
+        "type": "number",
+        "description": "取得開始位置"
+    },
+    "limit": {
+        "type": "number",
+        "description": "最大取得件数"
+    },
+    "result": {
+        "type": "array",
+        "description": "取得結果の`AnimeSeries`の配列"
+    }
+    }
+}
