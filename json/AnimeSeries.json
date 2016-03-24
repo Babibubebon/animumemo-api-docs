@@ -11,6 +11,10 @@
         "type": "string",
         "description": "アニメシリーズID"
         },
+        "anime_work_id": {
+        "type": "string",
+        "description": "アニメ作品ID"
+        },
         "media": {
         "type": "string",
         "description": "メディア"
