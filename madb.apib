@@ -94,6 +94,23 @@ HOST: https://api.animumemo.com/madb
         <!-- include(json/AnimeEpisodeList.json) -->
 
 
+## 関連するシリーズの取得 [GET /anime/series/{id}/related_series]
+関連するシリーズ作品の情報を取得する。
+
++ Parameters
+    + id: `ANS000550400` - 以下のいずれかのIDを指定する。
+        + アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID
+        + URL ID: 作品情報ページURLの末尾の数字(*非推奨*) `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
+
+
++ Response 200
+    + Body
+        <!-- include(json/related_series.json) -->
+         
+    + Schema
+        <!-- include(json/AnimeRelatedSeriesList.json) -->
+
+
 ## アニメ情報の検索 [/anime/search]
 
 ### 検索を実行 [GET /anime/search{?fields,limit,offset,media,title,start_date,end_date,airtime}]
@@ -134,7 +151,6 @@ HOST: https://api.animumemo.com/madb
     ```
 
 + Response 200 (application/json)
-    
     + Body
         <!-- include(json/search.json) -->
 
@@ -208,3 +224,11 @@ HOST: https://api.animumemo.com/madb
 
 ## AnimeEpisodeList (array)
 + (AnimeEpisode)
+
+## AnimeRelatedSeries
++ title (string) - タイトル
++ anime_series_id (string) - アニメシリーズID
+
+## AnimeRelatedSeriesList (array)
++ (AnimeRelatedSeries) - a
+

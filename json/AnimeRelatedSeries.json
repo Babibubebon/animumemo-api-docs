@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "AnimeRelatedSeries",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "タイトル"
+    },
+    "anime_series_id": {
+      "type": "string",
+      "description": "アニメシリーズID"
+    }
+  }
+}
