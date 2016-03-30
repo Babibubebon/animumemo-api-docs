@@ -1,0 +1,32 @@
+{
+    "total_count": 5,
+    "offset": 0,
+    "limit": 500,
+    "result":[
+        {
+            "title": "魔法少女隊アルス",
+            "media": "TV",
+            "start_date": "2004/04/09"
+        },
+        {
+            "title": "魔法少女猫 たると",
+            "media": "TV",
+            "start_date": "2001/07/05"
+        },
+        {
+            "title": "魔法少女リリカルなのは",
+            "media": "TV",
+            "start_date": "2004/10/02"
+        },
+        {
+            "title": "魔法少女リリカルなのはA's",
+            "media": "TV",
+            "start_date": "2005/10/02"
+        },
+        {
+            "title": "奥さまは 魔法少女 Bewitched Arnès",
+            "media": "TV",
+            "start_date": "2005/07/09"
+        }
+    ]
+}

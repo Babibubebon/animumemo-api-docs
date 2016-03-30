@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "AnimeEpisode",
+  "properties": {
+    "episode": {
+      "type": "string",
+      "description": "各話表記"
+    },
+    "title": {
+      "type": "string",
+      "description": "各話タイトル"
+    },
+    "staff": {
+      "type": "string",
+      "description": "各話スタッフ"
+    },
+    "cast": {
+      "type": "string",
+      "description": "各話キャスト"
+    },
+    "character": {
+      "type": "string",
+      "description": "各話キャラクター"
+    },
+    "story": {
+      "type": "string",
+      "description": "各話ストーリー"
+    },
+    "main_mecha": {
+      "type": "string",
+      "description": "各話メインメカ"
+    },
+    "note": {
+      "type": "string",
+      "description": "各話情報備考"
+    },
+    "source": {
+      "type": "string",
+      "description": "情報源"
+    }
+  }
+}

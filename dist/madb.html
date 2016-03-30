@@ -10,7 +10,7 @@
 <p>アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID</p>
 </li>
 <li>
-<p>URL ID: 作品情報ページURLの末尾の数字 <code>https://mediaarts-db.jp/an/anime_series/([0-9]+)</code></p>
+<p>URL ID: 作品情報ページURLの末尾の数字(<em>非推奨</em>) <code>https://mediaarts-db.jp/an/anime_series/([0-9]+)</code></p>
 </li>
 </ul>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -58,7 +58,6 @@
   "<span class="hljs-attribute">url</span>": <span class="hljs-value"><span class="hljs-string">"https://mediaarts-db.jp/an/anime_series/9487"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
-  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"AnimeSeries"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
   "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">url_id</span>": <span class="hljs-value">{
@@ -113,11 +112,11 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"放送期間など"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">productions</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">production</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"製作・制作"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">productions_authority_id</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">production_authority_id</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"製作・制作典拠ID"</span>
     </span>}</span>,
@@ -129,19 +128,19 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"監督"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">staffs</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">staff</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"メインスタッフ"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">staffs_authority_id</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">staff_authority_id</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"スタッフ典拠ID"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">casts</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">cast</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"キャスト"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">musics</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">music</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"主題歌情報"</span>
     </span>}</span>,
@@ -209,7 +208,7 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"通称"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">related_works</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">related_work</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"関連作品"</span>
     </span>}</span>,
@@ -217,7 +216,7 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"タグ"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">notes</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"アニメシリーズ備考"</span>
     </span>}</span>,
@@ -225,7 +224,7 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"原版メディア"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">sources</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"情報源"</span>
     </span>}</span>,
@@ -290,14 +289,14 @@
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得結果の`AnimeSeries`の配列"</span>
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="anime-アニメシリーズ情報-get-2" class="action get"><h4 class="action-heading"><div class="name">アニメ各話情報の取得</div><a href="#anime-アニメシリーズ情報-get-2" class="method get">GET</a><code class="uri">/anime/series/{id}/episodes</code></h4><p>作品の各話(エピソード)の情報を取得する。</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="anime-アニメシリーズ情報-get-2" class="action get"><h4 class="action-heading"><div class="name">アニメ各話情報の取得</div><a href="#anime-アニメシリーズ情報-get-2" class="method get">GET</a><code class="uri">/anime/series/{id}/episodes</code></h4><p>各話(エピソード)の情報を取得する。</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.animumemo.com/madb</span>/anime/series/<span class="hljs-attribute" title="id">ANS000550400</span>/episodes</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>ANS000550400</span></span><p>以下のいずれかのIDを指定する。</p>
 <ul>
 <li>
 <p>アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID</p>
 </li>
 <li>
-<p>URL ID: 作品情報ページURLの末尾の数字 <code>https://mediaarts-db.jp/an/anime_series/([0-9]+)</code></p>
+<p>URL ID: 作品情報ページURLの末尾の数字(<em>非推奨</em>) <code>https://mediaarts-db.jp/an/anime_series/([0-9]+)</code></p>
 </li>
 </ul>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Body</h5><pre><code>[
@@ -458,15 +457,15 @@
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話タイトル"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">staffs</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">staff</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話スタッフ"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">casts</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">cast</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話キャスト"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">characters</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">character</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話キャラクター"</span>
       </span>}</span>,
@@ -478,11 +477,11 @@
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話メインメカ"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">notes</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"各話情報備考"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">sources</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"情報源"</span>
       </span>}
@@ -570,7 +569,7 @@
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"取得結果の`AnimeSeries`の配列"</span>
     </span>}
   </span>}
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 25 Mar 2016</p><script>/* eslint-env browser */
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 30 Mar 2016</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 

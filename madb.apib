@@ -21,7 +21,7 @@ HOST: https://api.animumemo.com/madb
 + Parameters
     + id: `ANS000550400` - 以下のいずれかのIDを指定する。
         + アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID
-        + URL ID: 作品情報ページURLの末尾の数字 `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
+        + URL ID: 作品情報ページURLの末尾の数字(*非推奨*) `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
 
 + Response 200 (application/json)
     + Body
@@ -79,12 +79,12 @@ HOST: https://api.animumemo.com/madb
         <!-- include(json/AnimeSeriesList.json) -->
 
 ### アニメ各話情報の取得 [GET /anime/series/{id}/episodes]
-作品の各話(エピソード)の情報を取得する。
+各話(エピソード)の情報を取得する。
 
 + Parameters
     + id: `ANS000550400` - 以下のいずれかのIDを指定する。
         + アニメシリーズID: 作品情報ページ記載の調査毎に振られるアニメシリーズID
-        + URL ID: 作品情報ページURLの末尾の数字 `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
+        + URL ID: 作品情報ページURLの末尾の数字(*非推奨*) `https://mediaarts-db.jp/an/anime_series/([0-9]+)`
 
 + Response 200
     + Body
@@ -136,38 +136,7 @@ HOST: https://api.animumemo.com/madb
 + Response 200 (application/json)
     
     + Body
-        {
-            "total_count": 5,
-            "offset": 0,
-            "limit": 500,
-            "result":[
-                {
-                    "title": "魔法少女隊アルス",
-                    "media": "TV",
-                    "start_date": "2004/04/09"
-                },
-                {
-                    "title": "魔法少女猫 たると",
-                    "media": "TV",
-                    "start_date": "2001/07/05"
-                },
-                {
-                    "title": "魔法少女リリカルなのは",
-                    "media": "TV",
-                    "start_date": "2004/10/02"
-                },
-                {
-                    "title": "魔法少女リリカルなのはA's",
-                    "media": "TV",
-                    "start_date": "2005/10/02"
-                },
-                {
-                    "title": "奥さまは 魔法少女 Bewitched Arnès",
-                    "media": "TV",
-                    "start_date": "2005/07/09"
-                }
-            ]
-        }
+        <!-- include(json/search.json) -->
 
     + Schema
         <!-- include(json/AnimeSeriesList.json) -->
@@ -189,14 +158,14 @@ HOST: https://api.animumemo.com/madb
 + number_episodes (string) - 話数
 + network (string) - 放送局／劇場／販売元
 + term (string) - 放送期間など
-+ productions (string) - 製作・制作
-+ productions_authority_id (string) - 製作・制作典拠ID
++ production (string) - 製作・制作
++ production_authority_id (string) - 製作・制作典拠ID
 + original (string) - 原作
 + director (string) - 監督
-+ staffs (string) - メインスタッフ
-+ staffs_authority_id (string) - スタッフ典拠ID
-+ casts (string) - キャスト
-+ musics (string) - 主題歌情報
++ staff (string) - メインスタッフ
++ staff_authority_id (string) - スタッフ典拠ID
++ cast (string) - キャスト
++ music (string) - 主題歌情報
 + episode_title (string) - 各話タイトル
 + description (string) - 解説
 + story (string) - ストーリー
@@ -213,11 +182,11 @@ HOST: https://api.animumemo.com/madb
 + title_romaji_hepburn (string) - タイトル英語表記 ローマ字（ヘボン式）
 + title_romaji_macron (string) - タイトル英語表記 ローマ字（マクロン表記）
 + title_alias (string) - 通称
-+ related_works (string) - 関連作品
++ related_work (string) - 関連作品
 + tag (string) - タグ
-+ notes (string) - アニメシリーズ備考
++ note (string) - アニメシリーズ備考
 + master_media (string) - 原版メディア
-+ sources (string) - 情報源
++ source (string) - 情報源
 + url (string) - メディア芸術データベースの該当ページのURL
 
 ## AnimeSeriesList
@@ -229,13 +198,13 @@ HOST: https://api.animumemo.com/madb
 ## AnimeEpisode
 + episode (string) - 各話表記
 + title (string) - 各話タイトル
-+ staffs (string) - 各話スタッフ
-+ casts (string) - 各話キャスト
-+ characters (string) - 各話キャラクター
++ staff (string) - 各話スタッフ
++ cast (string) - 各話キャスト
++ character (string) - 各話キャラクター
 + story (string) - 各話ストーリー
 + main_mecha (string) - 各話メインメカ
-+ notes (string) - 各話情報備考
-+ sources (string) - 情報源
++ note (string) - 各話情報備考
++ source (string) - 情報源
 
 ## AnimeEpisodeList (array)
 + (AnimeEpisode)

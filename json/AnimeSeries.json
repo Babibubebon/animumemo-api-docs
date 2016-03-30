@@ -1,179 +1,179 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "AnimeSeries",
-    "type": "object",
-    "properties": {
-        "url_id": {
-        "type": "number",
-        "description": "URL ID"
-        },
-        "anime_series_id": {
-        "type": "string",
-        "description": "アニメシリーズID"
-        },
-        "anime_work_id": {
-        "type": "string",
-        "description": "アニメ作品ID"
-        },
-        "media": {
-        "type": "string",
-        "description": "メディア"
-        },
-        "title": {
-        "type": "string",
-        "description": "タイトル"
-        },
-        "title_kana": {
-        "type": "string",
-        "description": "タイトル よみがな"
-        },
-        "start_date": {
-        "type": "string",
-        "description": "開始年月日"
-        },
-        "end_date": {
-        "type": "string",
-        "description": "終了年月日"
-        },
-        "airtime": {
-        "type": "string",
-        "description": "放送枠時間／収録時間"
-        },
-        "broadcasting_times": {
-        "type": "string",
-        "description": "放送回数"
-        },
-        "number_episodes": {
-        "type": "string",
-        "description": "話数"
-        },
-        "network": {
-        "type": "string",
-        "description": "放送局／劇場／販売元"
-        },
-        "term": {
-        "type": "string",
-        "description": "放送期間など"
-        },
-        "productions": {
-        "type": "string",
-        "description": "製作・制作"
-        },
-        "productions_authority_id": {
-        "type": "string",
-        "description": "製作・制作典拠ID"
-        },
-        "original": {
-        "type": "string",
-        "description": "原作"
-        },
-        "director": {
-        "type": "string",
-        "description": "監督"
-        },
-        "staffs": {
-        "type": "string",
-        "description": "メインスタッフ"
-        },
-        "staffs_authority_id": {
-        "type": "string",
-        "description": "スタッフ典拠ID"
-        },
-        "casts": {
-        "type": "string",
-        "description": "キャスト"
-        },
-        "musics": {
-        "type": "string",
-        "description": "主題歌情報"
-        },
-        "episode_title": {
-        "type": "string",
-        "description": "各話タイトル"
-        },
-        "description": {
-        "type": "string",
-        "description": "解説"
-        },
-        "story": {
-        "type": "string",
-        "description": "ストーリー"
-        },
-        "main_character": {
-        "type": "string",
-        "description": "メインキャラクター紹介"
-        },
-        "character_design": {
-        "type": "string",
-        "description": "キャラクターデザイン関連"
-        },
-        "main_mecha": {
-        "type": "string",
-        "description": "キャラクター紹介（メインメカ）"
-        },
-        "sound": {
-        "type": "string",
-        "description": "音響関連"
-        },
-        "original_media": {
-        "type": "string",
-        "description": "原作のメディア"
-        },
-        "eirin_no": {
-        "type": "string",
-        "description": "映倫NO"
-        },
-        "eirin_rating": {
-        "type": "string",
-        "description": "(映倫NOと対になっている)レーティング"
-        },
-        "copyright": {
-        "type": "string",
-        "description": "コピーライト"
-        },
-        "title_japanese_english": {
-        "type": "string",
-        "description": "英語表記（国内）"
-        },
-        "title_english": {
-        "type": "string",
-        "description": "英語表記（海外）"
-        },
-        "title_romaji_hepburn": {
-        "type": "string",
-        "description": "タイトル英語表記 ローマ字（ヘボン式）"
-        },
-        "title_romaji_macron": {
-        "type": "string",
-        "description": "タイトル英語表記 ローマ字（マクロン表記）"
-        },
-        "title_alias": {
-        "type": "string",
-        "description": "通称"
-        },
-        "related_works": {
-        "type": "string",
-        "description": "関連作品"
-        },
-        "tag": {
-        "type": "string",
-        "description": "タグ"
-        },
-        "notes": {
-        "type": "string",
-        "description": "アニメシリーズ備考"
-        },
-        "master_media": {
-        "type": "string",
-        "description": "原版メディア"
-        },
-        "sources": {
-        "type": "string",
-        "description": "情報源"
-        },
-        "url": {
-        "type": "string",
-        "description": "メディア芸術データベースの該当ページのURL"
-        }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "AnimeSeries",
+  "properties": {
+    "url_id": {
+      "type": "number",
+      "description": "URL ID"
+    },
+    "anime_series_id": {
+      "type": "string",
+      "description": "アニメシリーズID"
+    },
+    "anime_work_id": {
+      "type": "string",
+      "description": "アニメ作品ID"
+    },
+    "media": {
+      "type": "string",
+      "description": "メディア"
+    },
+    "title": {
+      "type": "string",
+      "description": "タイトル"
+    },
+    "title_kana": {
+      "type": "string",
+      "description": "タイトル よみがな"
+    },
+    "start_date": {
+      "type": "string",
+      "description": "開始年月日"
+    },
+    "end_date": {
+      "type": "string",
+      "description": "終了年月日"
+    },
+    "airtime": {
+      "type": "string",
+      "description": "放送枠時間／収録時間"
+    },
+    "broadcasting_times": {
+      "type": "string",
+      "description": "放送回数"
+    },
+    "number_episodes": {
+      "type": "string",
+      "description": "話数"
+    },
+    "network": {
+      "type": "string",
+      "description": "放送局／劇場／販売元"
+    },
+    "term": {
+      "type": "string",
+      "description": "放送期間など"
+    },
+    "production": {
+      "type": "string",
+      "description": "製作・制作"
+    },
+    "production_authority_id": {
+      "type": "string",
+      "description": "製作・制作典拠ID"
+    },
+    "original": {
+      "type": "string",
+      "description": "原作"
+    },
+    "director": {
+      "type": "string",
+      "description": "監督"
+    },
+    "staff": {
+      "type": "string",
+      "description": "メインスタッフ"
+    },
+    "staff_authority_id": {
+      "type": "string",
+      "description": "スタッフ典拠ID"
+    },
+    "cast": {
+      "type": "string",
+      "description": "キャスト"
+    },
+    "music": {
+      "type": "string",
+      "description": "主題歌情報"
+    },
+    "episode_title": {
+      "type": "string",
+      "description": "各話タイトル"
+    },
+    "description": {
+      "type": "string",
+      "description": "解説"
+    },
+    "story": {
+      "type": "string",
+      "description": "ストーリー"
+    },
+    "main_character": {
+      "type": "string",
+      "description": "メインキャラクター紹介"
+    },
+    "character_design": {
+      "type": "string",
+      "description": "キャラクターデザイン関連"
+    },
+    "main_mecha": {
+      "type": "string",
+      "description": "キャラクター紹介（メインメカ）"
+    },
+    "sound": {
+      "type": "string",
+      "description": "音響関連"
+    },
+    "original_media": {
+      "type": "string",
+      "description": "原作のメディア"
+    },
+    "eirin_no": {
+      "type": "string",
+      "description": "映倫NO"
+    },
+    "eirin_rating": {
+      "type": "string",
+      "description": "(映倫NOと対になっている)レーティング"
+    },
+    "copyright": {
+      "type": "string",
+      "description": "コピーライト"
+    },
+    "title_japanese_english": {
+      "type": "string",
+      "description": "英語表記（国内）"
+    },
+    "title_english": {
+      "type": "string",
+      "description": "英語表記（海外）"
+    },
+    "title_romaji_hepburn": {
+      "type": "string",
+      "description": "タイトル英語表記 ローマ字（ヘボン式）"
+    },
+    "title_romaji_macron": {
+      "type": "string",
+      "description": "タイトル英語表記 ローマ字（マクロン表記）"
+    },
+    "title_alias": {
+      "type": "string",
+      "description": "通称"
+    },
+    "related_work": {
+      "type": "string",
+      "description": "関連作品"
+    },
+    "tag": {
+      "type": "string",
+      "description": "タグ"
+    },
+    "note": {
+      "type": "string",
+      "description": "アニメシリーズ備考"
+    },
+    "master_media": {
+      "type": "string",
+      "description": "原版メディア"
+    },
+    "source": {
+      "type": "string",
+      "description": "情報源"
+    },
+    "url": {
+      "type": "string",
+      "description": "メディア芸術データベースの該当ページのURL"
     }
+  }
 }
